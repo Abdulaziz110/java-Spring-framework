@@ -25,7 +25,7 @@ public class CourseCommandLineRunner {
                 Student student = new Student();
                 student.setFN(i+"+ A ");
                 student.setLN("B"+i);
-                student.setPhoneNumber(i+""+i+i+i+i+i+i+i+i+i);
+                student.setPhoneNumber(i+""+i+i+i+i+i);
 
                 AddCourseDto addCourseDto = new AddCourseDto("course number"+i, "learn course # "+i,new BigDecimal(String.valueOf(i*100)));
 
