@@ -23,5 +23,5 @@ public class BaseEntity {
     private Instant updatedAt;
 
     @Version
-    private Integer version;
+    private Integer version ;
 }
