@@ -32,9 +32,9 @@ public class CourseCommandLineRunner {
                 Course course = courseMapper.addCourseDtoToCource(addCourseDto);
                 student.getEnrollments().add(course);
 
-
                 courseRepo.save(course);
                 studentRepo.save(student);
+
             });
         };
     }
