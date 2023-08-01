@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authors List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .button-container button {
+            margin-right: 5px;
+        }
+
+        .delete-button {
+            background-color: #FF5722;
+        }
+
+        .delete-button:hover {
+            background-color: #F44336;
+        }
+
+        .update-button {
+            background-color: #2196F3;
+        }
+
+        .update-button:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+<h1>Book List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr th:each="Author : ${Authors}">
+        <td th:text="${Author.id}">123</td>
+        <td th:text="${Author.fname}">Spring</td>
+        <td th:text="${Author.lname}">Works</td>
+        <td>
+            <div class="button-container">
+                <button class="delete-button" onclick="deleteBook(this)" th:data-book-id="${Author.id}">Delete</button>
+                <button class="update-button" onclick="updateBook(this)" th:data-book-id="${Author.id}">Update</button>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+<button onclick="redirectToPage()">Add Book</button>
+
+<script>
+    function redirectToPage() {
+        // Redirect to the desired page
+        // window.location.href = "/addbook";
+    }
+
+    function deleteBook(button) {
+        bookId = button.getAttribute('data-book-id');
+        console.log("Delete book with ID: " + bookId);
+        // window.location.href = "/deletebook"+bookId;
+    }
+
+
+    function updateBook(button) {
+        // Implement update book functionality
+        bookId = button.getAttribute('data-book-id');
+        console.log("Update book with ID: " + bookId);
+        // window.location.href = "/updatebook" + bookId;
+    }
+
+</script>
+</body>
+</html>

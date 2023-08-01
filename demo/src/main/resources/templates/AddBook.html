@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"],
+        .back-button {
+            flex: 1;
+            margin-right: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover,
+        .back-button:hover {
+            background-color: #45a049;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Book Form</h1>
+<form method="post" action="/books" onsubmit="return validateForm()">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title"><br>
+    <span id="titleError" class="error-message"></span><br>
+
+    <label for="isbn">ISBN:</label>
+    <input type="text" id="isbn" name="isbn"><br>
+    <span id="isbnError" class="error-message"></span><br>
+
+    <label for="publisher">Publisher:</label>
+    <input type="text" id="publisher" name="publisher"><br>
+    <span id="publisherError" class="error-message"></span><br>
+
+    <h1>Author Information</h1>
+
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname"><br>
+    <span id="fnameError" class="error-message"></span><br>
+
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname"><br>
+    <span id="lnameError" class="error-message"></span><br>
+
+    <div class="button-container">
+        <input type="submit" value="Submit">
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        function validateForm() {
+            var title = document.getElementById('title');
+            var isbn = document.getElementById('isbn');
+            var publisher = document.getElementById('publisher');
+            var fname = document.getElementById('fname');
+            var lname = document.getElementById('lname');
+
+            var titleError = document.getElementById('titleError');
+            var isbnError = document.getElementById('isbnError');
+            var publisherError = document.getElementById('publisherError');
+            var fnameError = document.getElementById('fnameError');
+            var lnameError = document.getElementById('lnameError');
+
+            var isValid = true;
+
+            // Reset error messages
+            titleError.textContent = '';
+            isbnError.textContent = '';
+            publisherError.textContent = '';
+            fnameError.textContent = '';
+            lnameError.textContent = '';
+
+            // Check if any field is empty
+            if (title.value === '') {
+                titleError.textContent = 'Title is required';
+                isValid = false;
+            }
+
+            if (isbn.value === '') {
+                isbnError.textContent = 'ISBN is required';
+                isValid = false;
+            }
+
+            if (publisher.value === '') {
+                publisherError.textContent = 'Publisher is required';
+                isValid = false;
+            }
+
+            if (fname.value === '') {
+                fnameError.textContent = 'First Name is required';
+                isValid = false;
+            }
+
+            if (lname.value === '') {
+                lnameError.textContent = 'Last Name is required';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function goBack() {
+            // Go back to the previous page
+            window.history.back();
+        }
+    </script>
+</form>
+</body>
+</html>
