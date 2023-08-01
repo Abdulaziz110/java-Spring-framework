@@ -8,7 +8,6 @@ import java.time.Instant;
 @MappedSuperclass
 public class BaseEntity {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,7 +15,6 @@ public class BaseEntity {
     @CreationTimestamp
     @Column(name = "created_at",updatable = false ,nullable = false)
     private Instant creatAt;
-
 
     @UpdateTimestamp
     @Column(name = "updated_At" ,nullable = false)
