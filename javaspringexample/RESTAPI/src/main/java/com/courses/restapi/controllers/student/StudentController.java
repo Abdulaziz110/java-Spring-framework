@@ -33,7 +33,7 @@ public class StudentController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Student>  updateStudent(@PathVariable Long id,@RequestBody Student updatedStudent){
-
+        System.out.println(id);
         return studentService.update(id,updatedStudent);
     }
 

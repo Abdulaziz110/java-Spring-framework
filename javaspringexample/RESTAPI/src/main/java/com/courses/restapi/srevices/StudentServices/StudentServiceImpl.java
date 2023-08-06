@@ -67,4 +67,5 @@ public class StudentServiceImpl implements StudentService {
         studentRepo.deleteById(id);
         return new ResponseEntity<>("Student with id:"+id+" has been deleted successfully",HttpStatus.NO_CONTENT);
     }
+
 }

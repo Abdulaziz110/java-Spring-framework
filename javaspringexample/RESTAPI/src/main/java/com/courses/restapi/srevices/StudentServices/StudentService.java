@@ -1,9 +1,6 @@
 package com.courses.restapi.srevices.StudentServices;
 
 import com.courses.restapi.entities.Students.Student;
-import com.courses.restapi.entities.courses.dto.AddCourseDto;
-import com.courses.restapi.entities.courses.dto.CourseDto;
-import com.courses.restapi.srevices.EntityService;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
