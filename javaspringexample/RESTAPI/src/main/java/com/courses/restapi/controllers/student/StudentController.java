@@ -1,6 +1,4 @@
 package com.courses.restapi.controllers.student;
-
-
 import com.courses.restapi.entities.Students.Student;
 import com.courses.restapi.srevices.StudentServices.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
