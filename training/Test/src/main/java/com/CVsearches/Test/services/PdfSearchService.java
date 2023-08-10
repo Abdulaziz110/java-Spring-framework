@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class PdfSearchService {
 
     private static final int NUM_THREADS = Runtime.getRuntime().availableProcessors();
-    private static final int CHUNK_SIZE = 10000;  // Number of characters per chunk
+    private static final int CHUNK_SIZE = 100000;  // Number of characters per chunk
 
     public List<String> searchPdfDirectory(String directoryPath, String targetWord) {
         File directory = new File(directoryPath);
