@@ -14,7 +14,7 @@ public class getcvController {
     private PdfSearchService pdfSearchService;
 
     public List<String> getPdfsContainingWord(String directoryPath, String targetWord) {
-        return pdfSearchService.getPdfsContainingWord(directoryPath, targetWord);
+        return pdfSearchService.searchPdfDirectory(directoryPath, targetWord);
     }
 
 
