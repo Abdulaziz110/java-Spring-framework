@@ -41,7 +41,7 @@ public class PdfSearchService {
 
             return pdfContent.contains(targetWord);
         } catch (IOException e) {
-            e.printStackTrace();
+
             return false;
         }
     }

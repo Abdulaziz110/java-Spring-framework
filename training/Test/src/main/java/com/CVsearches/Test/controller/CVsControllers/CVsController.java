@@ -15,7 +15,7 @@ public class CVsController {
 
     @Autowired
     private getcvController getcvController;
-    @GetMapping("CVs?result={word}")
+    @GetMapping("{word}")
     public ResponseEntity<List<String>> getCVs(@PathVariable String word){
         List<String> pdfs = getcvController.getPdfsContainingWord("C:\\Users\\Abdul\\Desktop\\cvs",word);
         return new ResponseEntity<>(pdfs, HttpStatus.OK);
