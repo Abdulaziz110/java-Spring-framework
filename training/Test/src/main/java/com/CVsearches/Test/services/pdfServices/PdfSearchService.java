@@ -1,4 +1,4 @@
-package com.CVsearches.Test.services;
+package com.CVsearches.Test.services.pdfServices;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.stereotype.Service;
