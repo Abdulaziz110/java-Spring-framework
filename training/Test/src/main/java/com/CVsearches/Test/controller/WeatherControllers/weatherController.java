@@ -1,7 +1,7 @@
-package com.CVsearches.Test.controller.Weatherconteooler;
+package com.CVsearches.Test.controller.WeatherControllers;
 
 import com.CVsearches.Test.domin.CountryWeather;
-import com.CVsearches.Test.services.weatherservice.WeatherService;
+import com.CVsearches.Test.services.WeatherServices.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

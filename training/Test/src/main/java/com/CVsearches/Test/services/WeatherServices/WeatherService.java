@@ -1,4 +1,4 @@
-package com.CVsearches.Test.services.weatherservice;
+package com.CVsearches.Test.services.WeatherServices;
 
 import com.CVsearches.Test.domin.CountryWeather;
 import org.json.JSONObject;
