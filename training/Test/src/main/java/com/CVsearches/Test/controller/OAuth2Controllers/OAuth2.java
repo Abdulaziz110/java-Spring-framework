@@ -1,0 +1,27 @@
+package com.CVsearches.Test.controller.OAuth2Controllers;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+@RestController
+public class OAuth2 {
+
+    @GetMapping("/")
+    public Object  securityFilterChain(OAuth2AuthenticationToken auth2AuthenticationToken){
+        Collection<? extends GrantedAuthority> authorities = auth2AuthenticationToken.getAuthorities();
+
+        List<String> roles = authorities.stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.toList());
+        System.out.println(roles.get(0));
+        return auth2AuthenticationToken.getPrincipal().getAuthorities();
+    }
+
+}
