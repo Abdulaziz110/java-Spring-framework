@@ -3,7 +3,6 @@ package com.CVsearches.Test.controller.CVsControllers;
 import com.CVsearches.Test.services.pdfServices.PdfSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
