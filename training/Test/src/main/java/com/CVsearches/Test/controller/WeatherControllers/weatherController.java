@@ -15,7 +15,6 @@ public class weatherController {
     private WeatherService weatherservice;
     @GetMapping("weather/{city}")
     public ResponseEntity<CountryWeather> getweather(@PathVariable String city){
-        System.out.println("!!!!!!!!!!!!!!!");
        return   weatherservice.getWeathersStatus(city);
     }
 }
