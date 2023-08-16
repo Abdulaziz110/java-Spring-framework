@@ -18,7 +18,6 @@ public class OAuth2Controller {
         List<String> roles = authorities.stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
-        System.out.println(roles.get(0));
         return auth2AuthenticationToken.getPrincipal().getAuthorities();
     }
 

@@ -14,6 +14,6 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                                         Authentication authentication) throws IOException, ServletException {
-        response.sendRedirect("/"); // Redirect to /hello after successful authentication
+        response.sendRedirect("/send-whatsapp-message"); // Redirect to /hello after successful authentication
     }
 }
