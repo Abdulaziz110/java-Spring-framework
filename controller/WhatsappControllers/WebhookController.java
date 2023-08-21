@@ -6,18 +6,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebhookController {
 
-    // This endpoint handles the verification request
-    @GetMapping("/webhooks")
-    public String handleVerification(
+    private final String myToken = "1q2w3e";
+
+    @GetMapping("/webhook")
+    public String handleWebhookVerification(
             @RequestParam("hub.mode") String mode,
             @RequestParam("hub.challenge") String challenge,
             @RequestParam("hub.verify_token") String verifyToken) {
 
-        if ("subscribe".equals(mode) && "meatyhamhock".equals(verifyToken)) {
-            // Respond with the challenge value to verify the webhook
-            return challenge;
+        if (mode != null && verifyToken != null) {
+            if ("subscribe".equals(mode) && myToken.equals(verifyToken)) {
+                return challenge;
+            } else {
+                return "Invalid request";
+            }
         } else {
-            // Invalid verification request
             return "Invalid request";
         }
     }
