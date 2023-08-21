@@ -8,7 +8,7 @@ public class WebhookController {
 
     private final String myToken = "1q2w3e";
 
-    @GetMapping("/webhook")
+    @GetMapping("/webhook",produces = MediaType.TEXT_PLAIN_VALUE)
     public String handleWebhookVerification(
             @RequestParam("hub.mode") String mode,
             @RequestParam("hub.challenge") String challenge,
