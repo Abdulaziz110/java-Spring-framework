@@ -11,7 +11,7 @@ public class WebhookController {
 
     private final String myToken = "1q2w3e";
 
-    @GetMapping("/webhook")
+    @PostMapping("/webhook")
     public ResponseEntity<String> handleWebhookVerification(
             @RequestParam("hub.mode") String mode,
             @RequestParam("hub.challenge") String challenge,
