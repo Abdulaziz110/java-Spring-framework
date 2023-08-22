@@ -55,7 +55,7 @@ public class WebhookController {
     }
 
 
-    @GetMapping("/webhooks")
+    @GetMapping("/webhooks?hub.mode={mode}&hub.challenge={challenge}&hub.verify_token={verifyToken}")
     public ResponseEntity<WebhookResponse> handleWebhookVerification(
             @RequestParam("hub.mode") String mode,
             @RequestParam("hub.challenge") String challenge,
