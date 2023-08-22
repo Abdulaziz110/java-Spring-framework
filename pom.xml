@@ -43,6 +43,13 @@
 		<artifactId>spring-boot-starter-security</artifactId>
 	</dependency>
 
+
+		<dependency>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-java-sdk-dynamodb</artifactId>
+        <version>1.12.128</version> <!-- Use the latest version available -->
+    </dependency>
+
 	<dependency>
 		<groupId>com.squareup.retrofit2</groupId>
 		<artifactId>converter-gson</artifactId>
