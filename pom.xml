@@ -137,12 +137,19 @@
 
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.9.0</version> <!-- Use a compatible version -->
+            <configuration>
+                <source>17</source> <!-- Set the Java source version compatible with your code -->
+                <target>17</target> <!-- Set the target Java version compatible with your code -->
+            </configuration>
+        </plugin>
+        <!-- Other plugins -->
+    </plugins>
+</build>
+
 
 </project>
