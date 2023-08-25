@@ -1,0 +1,7 @@
+# heroku.yml
+
+build:
+  docker:
+    web: Dockerfile
+
+# This section specifies the deployment process after a successful build
